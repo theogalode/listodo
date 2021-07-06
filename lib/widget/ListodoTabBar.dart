@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:listodo/models/recipe_model.dart';
 import 'package:listodo/utils/listodo_colors.dart';
 import 'package:listodo/utils/project_properties.dart';
 
 class ListodoTabBar extends StatefulWidget {
+  final List<Widget> items;
+
+  ListodoTabBar({this.items});
+
   @override
   _ListodoTabBarState createState() => _ListodoTabBarState();
 }
 
 class _ListodoTabBarState extends State<ListodoTabBar> {
   int _selectedPage = 0;
-  List<Recipe> displayedRecipe = [];
   PageController _pageController = PageController();
 
   void _changePage(int pageNum) {
@@ -84,48 +86,7 @@ class _ListodoTabBarState extends State<ListodoTabBar> {
                 });
               },
               controller: _pageController,
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
-                  margin: EdgeInsets.symmetric(vertical: 10),
-                  child: Column(
-                    children: [
-                      Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Text(
-                                'Explorer des recettes',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {},
-                                child: Text(
-                                  'Voir plus',
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                      color: ListodoColors.listodoSwatch,
-                                      decoration: TextDecoration.underline),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  child: Center(
-                    child: Text('data'),
-                  ),
-                )
-              ],
+              children: widget.items,
             ),
           )
         ],

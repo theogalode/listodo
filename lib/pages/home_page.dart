@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:listodo/dummy_data.dart';
+import 'package:listodo/widget/ListodoHomeListsLists.dart';
+import 'package:listodo/widget/ListodoHomeRecipesLists.dart';
 import 'package:listodo/widget/ListodoTabBar.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,7 +13,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -29,7 +31,12 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          ListodoTabBar()
+          ListodoTabBar(
+            items: [
+              ListodoHomeRecipesLists(recipes: [], profiles: []),
+              ListodoHomeListsLists(lists: [], profiles: [])
+            ],
+          ),
         ],
       ),
     );
