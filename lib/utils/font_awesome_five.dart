@@ -29,7 +29,7 @@ class FontAwesomeFive {
   FontAwesomeFive._();
 
   static const _kFontFam = 'FontAwesome5';
-  static const String? _kFontPkg = null;
+  static const String _kFontPkg = null;
 
   static const IconData hdd_1 =
       IconData(0xe8a1, fontFamily: _kFontFam, fontPackage: _kFontPkg);

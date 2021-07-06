@@ -28,7 +28,7 @@ class FontAwesomeFour {
   FontAwesomeFour._();
 
   static const _kFontFam = 'FontAwesome4';
-  static const String? _kFontPkg = null;
+  static const String _kFontPkg = null;
 
   static const IconData glass =
       IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);

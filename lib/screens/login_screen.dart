@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:listodo/screens/tabs_screen.dart';
 import 'package:listodo/utils/font_awesome_four.dart';
 import 'package:listodo/widget/ListodoRoundedButton.dart';
 import 'package:listodo/widget/ListodoTextFormField.dart';
@@ -90,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       labelText: 'Mot de passe',
                       onSaved: (value) {},
                       borderColor: ListodoColors.listodoSwatch,
-                      obscureText: false,
+                      obscureText: true,
                     ),
                     SizedBox(
                       height: 20,
@@ -131,7 +132,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 50,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context).pushNamed('/home');
+                          Navigator.pushReplacementNamed(
+                            context,
+                            TabsScreen.routeName,
+                          );
                         },
                         child: Text(
                           'Connexion',

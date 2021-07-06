@@ -3,10 +3,10 @@ import 'package:listodo/utils/project_properties.dart';
 
 class ListodoTextFormField extends StatelessWidget {
   ListodoTextFormField({
-    required this.onSaved,
-    required this.borderColor,
-    required this.labelText,
-    required this.obscureText,
+    @required this.onSaved,
+    @required this.borderColor,
+    @required this.labelText,
+    @required this.obscureText,
   });
 
   final onSaved;

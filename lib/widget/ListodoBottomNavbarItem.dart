@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:listodo/utils/listodo_colors.dart';
 
-class ListodoBottomNavbarItem extends StatelessWidget {
+class ListodoBottomNavbarItem extends StatefulWidget {
   final IconData icon;
-  final GestureTapCallback action;
+  final void Function() action;
+  final Color iconColor;
 
   const ListodoBottomNavbarItem({
-    required this.icon,
-    required this.action,
+    @required this.icon,
+    @required this.action,
+    @required this.iconColor
   });
 
+  @override
+  State<ListodoBottomNavbarItem> createState() =>
+      _ListodoBottomNavbarItemState();
+}
+
+class _ListodoBottomNavbarItemState extends State<ListodoBottomNavbarItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,14 +35,14 @@ class ListodoBottomNavbarItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Icon(
-                icon,
-                color: Colors.black,
+                widget.icon,
+                color: widget.iconColor,
                 size: 25,
               ),
             ],
           ),
         ),
-        onPressed: action,
+        onPressed: widget.action,
         shape: CircleBorder(),
         elevation: 0,
         highlightElevation: 0,

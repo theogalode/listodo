@@ -3,18 +3,18 @@ import 'package:listodo/utils/listodo_colors.dart';
 
 class ListodoRoundedButton extends StatelessWidget {
   ListodoRoundedButton({
-    required this.icon,
-    required this.onPressed,
-    required this.width,
-    required this.height,
-    required this.backgroundColor,
-    required this.iconColor,
-    required this.iconSize,
-    required this.shadow,
+    @required this.icon,
+    @required this.onPressed,
+    @required this.width,
+    @required this.height,
+    @required this.backgroundColor,
+    @required this.iconColor,
+    @required this.iconSize,
+    @required this.shadow, int currentIndex,
   });
 
   final IconData icon;
-  final GestureTapCallback onPressed;
+  final void Function() onPressed;
   final double width;
   final double height;
   final Color backgroundColor;
