@@ -9,23 +9,21 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
+
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            margin: EdgeInsets.only(top: 60, right: 40, left: 40),
+            width: 350,
+            margin: EdgeInsets.only(top: 60),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(30),
             ),
             child: TextField(
               decoration: InputDecoration(
-                border: new OutlineInputBorder(
-                  borderRadius: const BorderRadius.all(
-                    const Radius.circular(30),
-                  ),
-                ),
+                border: InputBorder.none,
                 contentPadding: EdgeInsets.only(right: 30, left: 30),
                 hintText: 'Que recherchez vous ?',
               ),
