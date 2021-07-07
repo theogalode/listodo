@@ -85,10 +85,10 @@ class _TabsScreenState extends State<TabsScreen> {
               iconColor: _isSelected(1),
             ),
             ListodoRoundedButton(
-              icon: FontAwesomeFive.plus_1,
+              icon: _selectedPageIndex != 2 ? FontAwesomeFive.plus_1 : FontAwesomeFive.times,
               currentIndex: _selectedPageIndex,
               onPressed: () {
-                _selectPage(2);
+                _selectedPageIndex == 2 ? _selectPage(0) :  _selectPage(2);
               },
               width: 50,
               height: 50,
