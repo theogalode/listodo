@@ -58,7 +58,7 @@ class _CrafterPageState extends State<CrafterPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             _index == 0 ? Container() : Container(
-                              width: MediaQuery.of(context).size.width * 0.35,
+                              width: MediaQuery.of(context).size.width * 0.5 - 40,
                               child: ElevatedButton(
                                 onPressed: () {
                                   setState(() {
@@ -82,9 +82,9 @@ class _CrafterPageState extends State<CrafterPage> {
                                 ),
                               ),
                             ),
-                            _index == 0 ? Container() : SizedBox(width: 25),
+                            _index == 0 ? Container() : SizedBox(width: 20),
                             Container(
-                              width: MediaQuery.of(context).size.width * 0.35,
+                              width: MediaQuery.of(context).size.width * 0.5 - 40,
                               child: ElevatedButton(
                                 onPressed: () {
                                   setState(() {

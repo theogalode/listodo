@@ -20,6 +20,7 @@ class _CreationBody4ScreenState extends State<CreationBody4Screen> {
         child: Column(
           children: [
             Container(
+              width: MediaQuery.of(context).size.width - 60,
               padding: EdgeInsets.only(top: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +32,6 @@ class _CreationBody4ScreenState extends State<CreationBody4Screen> {
                           "Étapes de la recette",
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                         ),
-                        width: MediaQuery.of(context).size.width - 60,
                       ),
                     ],
                   ),
