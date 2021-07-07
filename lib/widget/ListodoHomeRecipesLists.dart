@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:listodo/models/recipe_model.dart';
 import 'package:listodo/utils/listodo_colors.dart';
+import 'package:listodo/widget/ListodoRecipeItem.dart';
 
 class ListodoHomeRecipesLists extends StatelessWidget {
-  final List<Widget> recipes;
-  final List<Widget> profiles;
+  final List<Recipe> recommendedRecipes;
+  final List<Recipe> followedUsersRecipes;
 
-  ListodoHomeRecipesLists({this.recipes, this.profiles});
+  ListodoHomeRecipesLists({this.recommendedRecipes, this.followedUsersRecipes});
 
   Widget _buildTitle(String title, void Function() action) {
     return Row(
@@ -34,20 +36,33 @@ class ListodoHomeRecipesLists extends StatelessWidget {
     );
   }
 
-  Widget _buildRecipesListView(){
-    
+  Widget _buildRecipesListView(context, recipes) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 15),
+      height: MediaQuery.of(context).size.height * 0.35,
+      width: MediaQuery.of(context).size.width,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (ctx, index) {
+          return ListodoRecipeItem(recipe: recipes[index]);
+        },
+        itemCount: recipes.length,
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15),
-      margin: EdgeInsets.symmetric(vertical: 10),
-      child: Column(
-        children: <Widget>[
-          _buildTitle('Explorer des recettes', () {}),
-          _buildTitle('Les profils que je suis', () {}),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            _buildTitle('Explorer des recettes', () {}),
+            _buildRecipesListView(context, recommendedRecipes),
+            _buildTitle('Les profils que je suis', () {}),
+            _buildRecipesListView(context, followedUsersRecipes),
+          ],
+        ),
       ),
     );
   }

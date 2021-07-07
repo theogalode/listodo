@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:listodo/dummy_data.dart';
+import 'package:listodo/models/listodo_list_model.dart';
 import 'package:listodo/utils/listodo_colors.dart';
 
-class ListodoHomeListsLists extends StatelessWidget {
-  final List<Widget> lists;
-  final List<Widget> profiles;
+import 'ListodoListItem.dart';
 
-  ListodoHomeListsLists({this.lists, this.profiles});
+class ListodoHomeListsLists extends StatelessWidget {
+  final List<ListodoList> listodoLists;
+  final List<ListodoList> followedUsersLists;
+
+  ListodoHomeListsLists({this.listodoLists, this.followedUsersLists});
 
   Widget _buildTitle(String title, void Function() action) {
     return Row(
@@ -34,16 +38,35 @@ class ListodoHomeListsLists extends StatelessWidget {
     );
   }
 
+  Widget _buildListsListView(context, lists) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 15),
+      height: MediaQuery.of(context).size.height * 0.35,
+      width: MediaQuery.of(context).size.width,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (ctx, index) {
+          return ListodoListItem(listodoList: lists[index]);
+        },
+        itemCount: lists.length,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15),
       margin: EdgeInsets.symmetric(vertical: 10),
-      child: Column(
-        children: <Widget>[
-          _buildTitle('Explorer des listes', () {}),
-          _buildTitle('Les profiles que je suis', () {}),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            _buildTitle('Explorer des listes', () {}),
+            _buildListsListView(context, listodoLists),
+            _buildTitle('Les profiles que je suis', () {}),
+            _buildListsListView(context, followedUsersLists),
+          ],
+        ),
       ),
     );
   }

@@ -17,8 +17,16 @@ class ProjectProperties {
   );
 
   static const boxShadow1 = BoxShadow(
-      color: Colors.black54,
-      offset: const Offset(1, 3),
-      blurRadius: 3,
-      spreadRadius: -3);
+    color: Colors.black54,
+    offset: const Offset(1, 3),
+    blurRadius: 3,
+    spreadRadius: -3,
+  );
+
+  static const boxShadow2 = BoxShadow(
+    color: Colors.black54,
+    offset: const Offset(1, 3),
+    blurRadius: 6,
+    spreadRadius: 1,
+  );
 }
