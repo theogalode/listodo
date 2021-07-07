@@ -65,53 +65,51 @@ class _TabsScreenState extends State<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(
-        backgroundColor: ListodoColors.listodoLightBlue,
-        body: _pages[_selectedPageIndex]['page'],
-        bottomNavigationBar: ListodoBottomNavbar(
-          items: <Widget>[
-            ListodoBottomNavbarItem(
-                icon: FontAwesomeFive.home_1,
-                action: () {
-                  _selectPage(0);
-                },
-                iconColor: _isSelected(0)),
-            ListodoBottomNavbarItem(
-              icon: FontAwesomeFive.utensils,
+    return Scaffold(
+      backgroundColor: ListodoColors.listodoLightBlue,
+      body: _pages[_selectedPageIndex]['page'],
+      bottomNavigationBar: ListodoBottomNavbar(
+        items: <Widget>[
+          ListodoBottomNavbarItem(
+              icon: FontAwesomeFive.home_1,
               action: () {
-                _selectPage(1);
+                _selectPage(0);
               },
-              iconColor: _isSelected(1),
-            ),
-            ListodoRoundedButton(
-              icon: FontAwesomeFive.plus_1,
-              currentIndex: _selectedPageIndex,
-              onPressed: () {
-                _selectPage(2);
-              },
-              width: 50,
-              height: 50,
-              backgroundColor: ListodoColors.listodoSwatch,
-              iconColor: Colors.white,
-              iconSize: 25,
-              shadow: true,
-            ),
-            ListodoBottomNavbarItem(
-                icon: FontAwesomeFive.list_1,
-                action: () {
-                  _selectPage(3);
-                },
-                iconColor: _isSelected(3)),
-            ListodoBottomNavbarItem(
-              icon: FontAwesomeFive.user_1,
+              iconColor: _isSelected(0)),
+          ListodoBottomNavbarItem(
+            icon: FontAwesomeFive.utensils,
+            action: () {
+              _selectPage(1);
+            },
+            iconColor: _isSelected(1),
+          ),
+          ListodoRoundedButton(
+            icon: FontAwesomeFive.plus_1,
+            currentIndex: _selectedPageIndex,
+            onPressed: () {
+              _selectPage(2);
+            },
+            width: 50,
+            height: 50,
+            backgroundColor: ListodoColors.listodoSwatch,
+            iconColor: Colors.white,
+            iconSize: 25,
+            shadow: true,
+          ),
+          ListodoBottomNavbarItem(
+              icon: FontAwesomeFive.list_1,
               action: () {
-                _selectPage(4);
+                _selectPage(3);
               },
-              iconColor: _isSelected(4),
-            ),
-          ],
-        ),
+              iconColor: _isSelected(3)),
+          ListodoBottomNavbarItem(
+            icon: FontAwesomeFive.user_1,
+            action: () {
+              _selectPage(4);
+            },
+            iconColor: _isSelected(4),
+          ),
+        ],
       ),
     );
   }

@@ -41,6 +41,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final usernameController = TextEditingController();
+    final passwordController = TextEditingController();
+
     return Scaffold(
       backgroundColor: ListodoColors.listodoLightBlue,
       body: Container(
@@ -83,6 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onSaved: (value) {},
                       borderColor: ListodoColors.listodoSwatch,
                       obscureText: false,
+                      controller: usernameController,
                     ),
                     SizedBox(
                       height: 20,
@@ -92,6 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onSaved: (value) {},
                       borderColor: ListodoColors.listodoSwatch,
                       obscureText: true,
+                      controller: passwordController,
                     ),
                     SizedBox(
                       height: 20,
