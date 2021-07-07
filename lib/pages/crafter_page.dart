@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:listodo/screens/creation_body_1_screen.dart';
 import 'package:listodo/screens/creation_body_2_screen.dart';
 import 'package:listodo/screens/creation_body_3_screen.dart';
@@ -120,3 +121,4 @@ class _CrafterPageState extends State<CrafterPage> {
         ));
   }
 }
+

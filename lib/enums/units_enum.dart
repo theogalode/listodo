@@ -6,6 +6,7 @@ enum Unit {
   MILLILITER,
   CENTILITER,
   LITER,
+  MILLIGRAM,
 }
 
 extension UnitExtension on Unit {
@@ -25,6 +26,8 @@ extension UnitExtension on Unit {
         return 'cl';
       case Unit.LITER:
         return 'l';
+      case Unit.MILLIGRAM:
+        return 'mg';
       default:
         return '';
     }
