@@ -75,29 +75,29 @@ class _TabsScreenState extends State<TabsScreen> {
               action: () {
                 _selectPage(0);
               },
-              iconColor: _isSelected(0)),
-          ListodoBottomNavbarItem(
-            icon: FontAwesomeFive.utensils,
-            action: () {
-              _selectPage(1);
-            },
-            iconColor: _isSelected(1),
-          ),
-          ListodoRoundedButton(
-            icon: FontAwesomeFive.plus_1,
-            currentIndex: _selectedPageIndex,
-            onPressed: () {
-              _selectPage(2);
-            },
-            width: 50,
-            height: 50,
-            backgroundColor: ListodoColors.listodoSwatch,
-            iconColor: Colors.white,
-            iconSize: 25,
-            shadow: true,
-          ),
-          ListodoBottomNavbarItem(
-              icon: FontAwesomeFive.list_1,
+              iconColor: _isSelected(1),
+            ),
+            ListodoRoundedButton(
+              icon: _selectedPageIndex != 2 ? FontAwesomeFive.plus_1 : FontAwesomeFive.times,
+              currentIndex: _selectedPageIndex,
+              onPressed: () {
+                _selectedPageIndex == 2 ? _selectPage(0) :  _selectPage(2);
+              },
+              width: 50,
+              height: 50,
+              backgroundColor: ListodoColors.listodoSwatch,
+              iconColor: Colors.white,
+              iconSize: 25,
+              shadow: true,
+            ),
+            ListodoBottomNavbarItem(
+                icon: FontAwesomeFive.list_1,
+                action: () {
+                  _selectPage(3);
+                },
+                iconColor: _isSelected(3)),
+            ListodoBottomNavbarItem(
+              icon: FontAwesomeFive.user_1,
               action: () {
                 _selectPage(3);
               },
